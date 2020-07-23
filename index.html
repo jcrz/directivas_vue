@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo con Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>Lista de cosas por aprender</h2>
+
+        <h4 v-if="esVisible">Front End</h4>
+        <ul v-for="(tech, indice) in itemsTech" v-bind:key="indice">
+            <li>{{ tech }}</li>
+        </ul>
+
+        <h4 v-if="esVisible">Marketing</h4>
+        <ul v-for="(tema, indice) in itemsMarketing" v-bind:key="indice">
+            <li v-if=" indice%2 === 0 ">{{ tema }}</li>
+        </ul>
+
+    </div>
+
+    <!-- JS -->
+    <script src="app.js" ></script>
+</body>
+</html>
